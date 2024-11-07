@@ -1,5 +1,5 @@
 const SubscriptionPage = () => {
-    return (  );
+    return;
 }
  
 export default SubscriptionPage;

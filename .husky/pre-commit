@@ -1,0 +1,3 @@
+#!/bin/sh
+. "$(dirname "$0")/git-push-header.sh"
+npx --no-install commitizen
