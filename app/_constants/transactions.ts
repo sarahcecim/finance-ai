@@ -40,7 +40,7 @@ import {
       label: "Investimento",
     },
   ];
-  
+
   export const TRANSACTION_PAYMENT_METHOD_OPTIONS = [
     {
       value: TransactionPaymentMethod.BANK_TRANSFER,
