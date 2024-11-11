@@ -50,6 +50,8 @@ const formSchema = z.object({
     message: "O nome é obrigatório.",
   }),
   amount: z.number({
+    required_error: "O valor é obrigatório.",
+  }).positive({
     message: "O nome é obrigatório.",
   }),
   type: z.nativeEnum(TransactionType, {
@@ -73,7 +75,7 @@ const AddTransactionButton = () => {
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      amount: 0,
+      amount: 50,
       category: TransactionCategory.OTHER,
       date: new Date(),
       name: "",
@@ -84,6 +86,8 @@ const AddTransactionButton = () => {
   const onSubmit = async (data: FormSchema) => {
     try {
       await addTransaction(data);
+      setDialogIsOpen(false);
+      form.reset();
     } catch (error) {
       console.error(error);
     }

@@ -40,7 +40,7 @@ import {
 } from "@prisma/client";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { upsertTransaction } from "./upsert-transaction";
+import * as upsertTransactionDialog from "./upsert-transaction-dialog";
 
 interface UpsertTransactionDialogProps {
   isOpen: boolean;
@@ -96,7 +96,7 @@ const UpsertTransactionDialog = ({
 
   const onSubmit = async (data: FormSchema) => {
     try {
-      await upsertTransaction({ ...data, id: transactionId });
+      await upsertTransactionDialog.upsertTransaction({ ...data, id: transactionId });
       setIsOpen(false);
       form.reset();
     } catch (error) {
@@ -271,3 +271,7 @@ const UpsertTransactionDialog = ({
 };
 
 export default UpsertTransactionDialog;
+
+export function upsertTransaction(arg0: { id: string | undefined; name: string; amount: number; type: "DEPOSIT" | "EXPENSE" | "INVESTMENT"; date: Date; category: "HOUSING" | "TRANSPORTATION" | "FOOD" | "ENTERTAINMENT" | "HEALTH" | "UTILITY" | "SALARY" | "EDUCATION" | "OTHER"; paymentMethod: "OTHER" | "CREDIT_CARD" | "DEBIT_CARD" | "BANK_TRANSFER" | "BANK_SLIP" | "CASH" | "PIX"; }) {
+  throw new Error("Function not implemented.");
+}
