@@ -43,7 +43,7 @@ import { upsertTransaction } from "../_actions/add-transaction";
 
 interface UpsertTransactionDialogProps {
   isOpen: boolean;
-  defaulValues?: FormSchema;
+  defaultValues?: FormSchema;
   transactionId?: string;
   setIsOpen: (isOpen: boolean) => void;
 }
@@ -77,13 +77,13 @@ type FormSchema = z.infer<typeof formSchema>;
 
 const UpsertTransactionDialog = ({
   isOpen,
-  defaulValues,
+  defaultValues,
   transactionId,
   setIsOpen,
 }: UpsertTransactionDialogProps) => {
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
-    defaultValues: defaulValues ?? {
+    defaultValues: defaultValues ?? {
       amount: 50,
       category: TransactionCategory.OTHER,
       date: new Date(),
@@ -111,7 +111,7 @@ const UpsertTransactionDialog = ({
       onOpenChange={(open) => {
         setIsOpen(open);
         if (!open) {
-          format.reset();
+          form.reset();
         }
       }}
     >
@@ -242,3 +242,5 @@ const UpsertTransactionDialog = ({
     </Dialog>
   );
 };
+
+export default UpsertTransactionDialog;
