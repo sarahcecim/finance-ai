@@ -5,7 +5,7 @@ import { auth } from "@clerk/nextjs/server";
 const SubscriptionPage = async() => {
     const {userId} = await auth()
     if (!userId) {
-      redirect('/login');
+      redirect("/login");
     }
 
   return <Navbar />;

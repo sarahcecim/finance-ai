@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 const TransactionsPage = async () => {
   const {userId} = await auth()
   if (!userId) {
-    redirect('/login');
+    redirect("/login");
   }
   const transactions = await db.transaction.findMany({
     where: {
