@@ -1,9 +1,11 @@
 import { ReactNode } from "react";
+
 interface PercentageItemProps {
   icon: ReactNode;
   title: string;
   value: number;
 }
+
 const PercentageItem = ({ icon, title, value }: PercentageItemProps) => {
   return (
     <div className="flex items-center justify-between">
@@ -16,4 +18,5 @@ const PercentageItem = ({ icon, title, value }: PercentageItemProps) => {
     </div>
   );
 };
+
 export default PercentageItem;

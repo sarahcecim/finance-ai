@@ -12,11 +12,14 @@ const Navbar = () => {
       {/* ESQUERDA */}
       <div className="flex items-center gap-10">
         <Image src="/logo.svg" width={173} height={39} alt={"Finance AI"} />
-        <Link href="/" className={
-            pathname == "/"
-              ? "font-bold text-primary"
-              : "text-muted-foreground"
-          }>Dashboard</Link>
+        <Link
+          href="/"
+          className={
+            pathname == "/" ? "font-bold text-primary" : "text-muted-foreground"
+          }
+        >
+          Dashboard
+        </Link>
         <Link
           href="/transactions"
           className={
@@ -27,11 +30,16 @@ const Navbar = () => {
         >
           Transações
         </Link>
-        <Link href="/subscription" className={
+        <Link
+          href="/subscription"
+          className={
             pathname == "/subscription"
               ? "font-bold text-primary"
               : "text-muted-foreground"
-          }>Assinatura</Link>
+          }
+        >
+          Assinatura
+        </Link>
       </div>
       {/* DIREITA */}
       <UserButton showName />
