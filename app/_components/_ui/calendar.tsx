@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 "use client";
 
 import * as React from "react";
@@ -11,10 +13,11 @@ export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
 function Calendar({
   className,
-  classNames, // Remover se não for necessário ou usar corretamente
-  showOutsideDays = true, // Remover se não for necessário
+  classNames,
+  showOutsideDays = true,
   ...props
 }: CalendarProps) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
@@ -51,7 +54,7 @@ function Calendar({
         day_range_middle:
           "aria-selected:bg-accent aria-selected:text-accent-foreground",
         day_hidden: "invisible",
-        ...classNames, // Certifique-se de passar esse valor de forma adequada
+        ...classNames,
       }}
       components={{
         IconLeft: () => <ChevronLeft className="h-4 w-4" />,

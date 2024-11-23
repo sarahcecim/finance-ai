@@ -8,7 +8,7 @@
     "build": "npx husky install && next build",
     "start": "next start",
     "lint": "next lint",
-   "prepare": "husky install",
+    "prepare": "husky install",
     "commit": "git cz"
   },
   "dependencies": {
@@ -49,9 +49,11 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8",
+    "eslint": "^8.57.1",
     "eslint-config-next": "14.2.16",
     "husky": "^8.0.0",
     "jest": "^29.7.0",
