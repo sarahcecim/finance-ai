@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 "use client";
 
 import * as React from "react";
@@ -15,9 +13,7 @@ function Calendar({
   className,
   classNames,
   showOutsideDays = true,
-  ...props
 }: CalendarProps) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
@@ -60,7 +56,6 @@ function Calendar({
         IconLeft: () => <ChevronLeft className="h-4 w-4" />,
         IconRight: () => <ChevronRight className="h-4 w-4" />,
       }}
-      {...props}
     />
   );
 }
